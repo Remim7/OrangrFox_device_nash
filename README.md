@@ -26,7 +26,7 @@ mkdir -p device/sony
 
 cd device/sony
 
-git clone https://github.com/Remim7/OrangeFOX_device_suzu.git -b fox_9.0 nash
+git clone https://github.com/Remim7/OrangeFOX_device_suzu.git -b fox_9.0 suzu
 
 ###-----Next,Build Recovery
 
