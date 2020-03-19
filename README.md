@@ -1,4 +1,3 @@
-TWRP device configuration for Sony Xperia X
 # OrangeFOX Recovery Device configuration for Sony Xperia X (suzu)
 
 Copyright 2019 - The OmniROM Project
@@ -58,4 +57,4 @@ Display | 1920 x 1080 pixels/5" LCD
 Rear Camera  | 23 MP
 Front Camera | 13 MP
 
-# OrangrFox_device_nash
+# OrangrFox_device_suzu
