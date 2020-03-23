@@ -58,9 +58,14 @@ BOARD_KERNEL_BASE := 0x20000000
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 zram.backend=z3fold androidboot.selinux=permissive
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
+
+# Kernel cmdline
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE += zram.backend=z3fold androidboot.selinux=permissive
 
 # Kernel properties
 TARGET_KERNEL_ARCH := arm64
@@ -73,8 +78,9 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 7843348480
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 22225600512
 BOARD_ODMIMAGE_PARTITION_SIZE := 419430400
 
-TARGET_USERIMAGES_USE_EXT4 := true
+# Partitions format
 TARGET_USES_MKE2FS := true
+TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
@@ -82,7 +88,6 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone2/temp"
 TW_EXCLUDE_SUPERSU := true
-TW_EXCLUDE_TWRPAPP := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_FUSE_NTFS := true
