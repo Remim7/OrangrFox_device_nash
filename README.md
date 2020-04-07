@@ -1,23 +1,23 @@
-# SHRP Recovery Device configuration for Sony Xperia X (suzu)
+# OrangeFOX Recovery Device configuration for Sony Xperia X (suzu)
 
 Copyright 2020 - The OmniROM Project
 
-For building SHRP Recovery for Sony Xperia X (suzu) ONLY.
+For building OrangeFOX Recovery for Sony Xperia X (suzu) ONLY.
 
 ### Kernel Source
 Check here: https://github.com/sonyxperiadev/kernel
 
-### SHRP Recovery Source
-SHRP Recovery Source: https://github.com/SKYHAWK-Recovery-Project
+### OrangeFOX  Recovery Source
+OrangeFOX Recovery Source: https://gitlab.com/OrangeFox/Manifest
 
 ### How to build recovery
 ###-----First,Sync source
 
-mkdir SHRP
+mkdir OrangeFox
 
-cd SHRP
+cd OrangeFox
 
-repo init -u git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git -b 9.0
+repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
 
 repo sync -j8 --force-sync
 
@@ -25,10 +25,10 @@ mkdir -p device/sony
 
 cd device/sony
 
-git clone https://github.com/Remim7/SHRP_device_sony_suzu.git -b shrp_9.0 suzu
+git clone https://github.com/Remim7/OrangrFox_device_suzu.git -b fox_9.0 suzu
 
 ###-----Next,Build Recovery
-cd SHRP
+cd OrangeFox
 
 source build/envsetup.sh
 
