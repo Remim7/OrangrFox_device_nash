@@ -1,24 +1,23 @@
-# OrangeFOX Recovery Device configuration for Sony Xperia X (suzu)
+# SHRP Recovery Device configuration for Sony Xperia X (suzu)
 
-Copyright 2019 - The OmniROM Project
+Copyright 2020 - The OmniROM Project
 
-For building OrangeFOX Recovery for Sony Xperia X.
+For building SHRP Recovery for Sony Xperia X (suzu) ONLY.
 
 ### Kernel Source
 Check here: https://github.com/sonyxperiadev/kernel
 
-### OrangeFOX Source
-OrangeFOX: https://gitlab.com/OrangeFox/Manifest
+### SHRP Recovery Source
+SHRP Recovery Source: https://github.com/SKYHAWK-Recovery-Project
 
 ### How to build recovery
-
 ###-----First,Sync source
 
-mkdir OrangeFox
+mkdir SHRP
 
-cd OrangeFox
+cd SHRP
 
-repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+repo init -u git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git -b 9.0
 
 repo sync -j8 --force-sync
 
@@ -26,11 +25,10 @@ mkdir -p device/sony
 
 cd device/sony
 
-git clone https://github.com/Remim7/OrangeFOX_device_suzu.git -b fox_9.0 suzu
+git clone https://github.com/Remim7/SHRP_device_sony_suzu.git -b shrp_9.0 suzu
 
 ###-----Next,Build Recovery
-
-cd OrangeFox
+cd SHRP
 
 source build/envsetup.sh
 
@@ -52,9 +50,7 @@ Memory  | 3GB
 Shipped Android Version | 6.0 (Marshmallow)
 Storage | 64GB
 Battery | 2620 mAh
-Dimensions | 155.8 x 76 x 6.1 mm
+Dimensions | 143 x 69 x 7.7 mm
 Display | 1920 x 1080 pixels/5" LCD
 Rear Camera  | 23 MP
 Front Camera | 13 MP
-
-# OrangrFox_device_suzu
